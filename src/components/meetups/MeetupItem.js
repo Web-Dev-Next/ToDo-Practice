@@ -9,9 +9,9 @@ function MeetupItem(props) {
           <img src={props.image} alt={props.title} />
         </div>
         <div className={classes.content}>
-          <h3>{props.title}</h3>
-          <address>{props.address}</address>
-          <p>{props.description}</p>
+          <h3 className={classes.content}>{props.title}</h3>
+          <address className={classes.content}>{props.address}</address>
+          <p className={classes.content}>{props.description}</p>
         </div>
         <div className={classes.actions}>
           <button>To Favourite</button>
