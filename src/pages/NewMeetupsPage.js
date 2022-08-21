@@ -1,12 +1,11 @@
-import {useHistory} from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import NewMeetupForm from "../components/meetups/NewMeetupForm";
 
 function NewMeetupsPage() {
-
   const history = useHistory();
 
-  const onMeetupAddHandler = (meetupData) => {
-    fetch(
+  const onMeetupAddHandler = async (meetupData) => {
+    await fetch(
       "https://academind-meetup-project-default-rtdb.firebaseio.com/meetup.json",
       {
         method: "POST",
@@ -15,9 +14,8 @@ function NewMeetupsPage() {
           "Content-Type": "application/json",
         },
       }
-    ).then(()=>{
-      history.replace("/");
-    });    
+    );
+    history.replace("/");
   };
   return (
     <section>
