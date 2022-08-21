@@ -17,6 +17,7 @@ function NewMeetupsPage() {
     );
     history.replace("/");
   };
+
   return (
     <section>
       <h1>Add New Meetup</h1>
