@@ -2,7 +2,16 @@ import NewMeetupForm from "../components/meetups/NewMeetupForm";
 
 function NewMeetupsPage() {
   const onMeetupAddHandler = (meetupData) => {
-    console.log(meetupData);
+    fetch(
+      "https://academind-meetup-project-default-rtdb.firebaseio.com/meetup.json",
+      {
+        method: "POST",
+        body: JSON.stringify(meetupData),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
   };
   return (
     <section>
